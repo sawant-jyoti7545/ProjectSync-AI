@@ -29,6 +29,7 @@ from datetime import datetime
 
 from fastapi import FastAPI, Depends, UploadFile, File
 from fastapi.middleware.cors import CORSMiddleware
+app = FastAPI()
 from sqlalchemy.orm import Session
 from sqlalchemy import func, desc
 
@@ -63,9 +64,14 @@ app = FastAPI(
 # --- CORS ---
 # Explicit origin list from config (never a bare "*" since we may use
 # credentials later for auth). Add your Live Server port to .env if different.
+from fastapi.middleware.cors import CORSMiddleware
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=settings.ALLOWED_ORIGINS,
+    allow_origins=[
+        "https://projectsync-ai.pages.dev",
+        "https://projectsync-ai-1.pages.dev"
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
