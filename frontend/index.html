@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ProjectSync AI - Schedule vs. Site Reality, Reconciled by AI</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div id="navbar-mount"></div>
+
+  <main class="container page-content">
+
+    <!-- ===================== HERO ===================== -->
+    <section class="section hero-grid">
+      <div>
+        <h1 style="font-size:44px; max-width:560px;">Bring Site Reality Into ProjectSync</h1>
+        <p style="font-size:17px; max-width:520px; color: var(--text-muted);">
+          Upload a site report. ProjectSync AI reads it, matches every activity against your
+          planned schedule, calculates real variance, flags delays and risks, and routes
+          anything uncertain to a human before it reaches your dashboard.
+        </p>
+        <div style="display:flex; gap:12px; margin-top:24px;">
+          <a href="data-capture.html" class="btn btn-primary">Start Project Analysis</a>
+          <a href="dashboard.html" class="btn btn-secondary">View Sample Dashboard</a>
+        </div>
+      </div>
+
+      <!-- Illustrative hero visual: planned vs actual, the core product idea -->
+      <div class="card" aria-hidden="true">
+        <div class="card-title">Live Schedule Reconciliation</div>
+        <div style="display:flex; flex-direction:column; gap:18px; margin-top:12px;">
+
+          <div>
+            <div style="display:flex; justify-content:space-between; font-size:13px; margin-bottom:2px;">
+              <span>Excavation – Block A</span>
+              <span class="badge badge-amber">At Risk</span>
+            </div>
+            <div class="progress-dual status-atrisk">
+              <div class="actual-fill" style="width:78%"></div>
+              <div class="planned-marker" style="left:80%"></div>
+            </div>
+            <div class="progress-legend"><span>Actual 78%</span><span>Planned 80%</span></div>
+          </div>
+
+          <div>
+            <div style="display:flex; justify-content:space-between; font-size:13px; margin-bottom:2px;">
+              <span>Foundation – Block B</span>
+              <span class="badge badge-red">Delayed</span>
+            </div>
+            <div class="progress-dual status-delayed">
+              <div class="actual-fill" style="width:35%"></div>
+              <div class="planned-marker" style="left:50%"></div>
+            </div>
+            <div class="progress-legend"><span>Actual 35%</span><span>Planned 50%</span></div>
+          </div>
+
+          <div>
+            <div style="display:flex; justify-content:space-between; font-size:13px; margin-bottom:2px;">
+              <span>Material Delivery</span>
+              <span class="badge badge-green">On Track</span>
+            </div>
+            <div class="progress-dual status-ontrack">
+              <div class="actual-fill" style="width:90%"></div>
+              <div class="planned-marker" style="left:88%"></div>
+            </div>
+            <div class="progress-legend"><span>Actual 90%</span><span>Planned 88%</span></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FEATURES ===================== -->
+    <section class="section">
+      <div class="section-head">
+        <h2>What ProjectSync AI does</h2>
+      </div>
+      <div class="grid grid-3">
+
+        <div class="card">
+          <h3>AI Activity Extraction</h3>
+          <p>Reads PDF site reports and pulls out activities, locations, progress figures, and
+          reported issues - no manual re-typing of field data.</p>
+        </div>
+
+        <div class="card">
+          <h3>Schedule Matching</h3>
+          <p>Compares every extracted activity against your planned schedule using activity
+          IDs, names, and location, with a confidence score for each match.</p>
+        </div>
+
+        <div class="card">
+          <h3>Delay Detection</h3>
+          <p>Calculates planned-vs-actual variance automatically and classifies each activity
+          as on track, at risk, or delayed.</p>
+        </div>
+
+        <div class="card">
+          <h3>Risk Analysis</h3>
+          <p>Flags equipment downtime, material delays, and dependency chains where one
+          delayed activity threatens downstream work.</p>
+        </div>
+
+        <div class="card">
+          <h3>Human Verification</h3>
+          <p>Low-confidence matches never get silently accepted - they're queued for a person
+          to confirm, reject, or rematch.</p>
+        </div>
+
+        <div class="card">
+          <h3>Project Intelligence</h3>
+          <p>A single dashboard showing planned vs. actual vs. risk vs. recommended action,
+          built from real backend data.</p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <div id="footer-mount"></div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

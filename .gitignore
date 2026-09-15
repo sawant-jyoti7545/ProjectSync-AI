@@ -1,0 +1,18 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# Environment secrets
+backend/.env
+
+# Database (generated at runtime, not source)
+backend/projectsync.db
+
+# Uploaded files (runtime data, not source)
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+# OS/editor
+.DS_Store
+.vscode/

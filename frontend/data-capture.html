@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Capture - ProjectSync AI</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div id="navbar-mount"></div>
+
+  <main class="container page-content">
+
+    <div class="section-head">
+      <div>
+        <h1>Data Capture</h1>
+        <p>Upload a site report and let ProjectSync AI extract, match, and analyze it against your schedule.</p>
+      </div>
+    </div>
+
+    <!-- ===================== UPLOAD SECTION ===================== -->
+    <section id="upload-section" class="section">
+      <div class="card">
+        <h3>Upload Report</h3>
+        <p style="margin-bottom:16px;">PDF, Excel (.xlsx/.xls), or CSV site progress reports.</p>
+
+        <input type="file" id="file-input" accept=".pdf,.xlsx,.xls,.csv" style="display:none;">
+
+        <div id="drop-zone" style="border:1px dashed var(--border-strong); border-radius:var(--radius); padding:28px; text-align:center; cursor:pointer;">
+          <div id="drop-zone-empty">
+            <p style="margin-bottom:8px;">Click to select a report, or drag one here.</p>
+            <button class="btn btn-secondary" type="button" id="choose-file-btn">Choose File</button>
+          </div>
+          <div id="drop-zone-selected" class="hidden">
+            <p class="mono" id="selected-filename" style="color:var(--text); margin-bottom:4px;"></p>
+            <p class="text-faint" id="selected-filesize" style="margin-bottom:12px;"></p>
+            <button class="btn btn-ghost" type="button" id="remove-file-btn">Remove file</button>
+          </div>
+        </div>
+
+        <div style="display:flex; gap:12px; margin-top:20px;">
+          <button class="btn btn-primary" id="analyze-btn" disabled>Analyze with ProjectSync AI</button>
+          <button class="btn btn-secondary" id="use-sample-btn" type="button">Use Sample Report</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== VOICE INPUT ===================== -->
+    <section id="voice-section" class="section">
+      <div class="card">
+        <h3>Voice Input</h3>
+        <p>Dictate a site update out loud. For best results, mention each activity's name,
+        location, planned and actual progress, status, and any issues - similar to how you'd
+        read out a written report.</p>
+
+        <div id="voice-unsupported" class="hidden state-message" style="margin-top:12px;">
+          <div class="state-title">Not supported in this browser</div>
+          <div>Voice input uses your browser's built-in speech recognition, which currently
+          only works in Chrome or Edge. You can still type your report into the box below and
+          click Analyze.</div>
+        </div>
+
+        <div style="display:flex; align-items:center; gap:14px; margin:16px 0;">
+          <button class="btn btn-primary" id="mic-btn" type="button">
+            <span id="mic-icon">●</span> <span id="mic-label">Start Recording</span>
+          </button>
+          <span id="mic-status" class="text-faint" style="font-size:13px;"></span>
+        </div>
+
+        <textarea id="voice-transcript" rows="6" placeholder="Your dictated (or typed) report will appear here - feel free to edit it before analyzing."
+          style="width:100%; background:var(--surface-raised); border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--text); padding:14px; font-family:var(--font-body); font-size:14px; resize:vertical;"></textarea>
+
+        <button class="btn btn-primary" id="analyze-voice-btn" style="margin-top:14px;" disabled>Analyze Transcript</button>
+      </div>
+    </section>
+
+    <!-- ===================== PROCESSING SECTION (hidden until Analyze is clicked) ===================== -->
+    <section id="processing-section" class="section hidden">
+      <div class="card">
+        <h3>Processing Report</h3>
+        <p>ProjectSync AI is analyzing your report. This will only complete once the backend finishes -
+        nothing here is simulated.</p>
+
+        <div id="processing-steps" style="display:flex; flex-direction:column; gap:10px; margin-top:20px;"></div>
+
+        <div id="processing-result" style="margin-top:20px;"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="footer-mount"></div>
+
+  <script src="js/app.js"></script>
+  <script src="js/upload.js"></script>
+  <script src="js/voice.js"></script>
+</body>
+</html>
