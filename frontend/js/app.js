@@ -7,7 +7,7 @@
    "dashboard showed 0 activities" problem from earlier attempts.
    ========================================================================== */
 
-const API_BASE = 'https://projectsync-ai-1.onrender.com/';
+const API_BASE = 'https://projectsync-ai-1.onrender.com';
 
 /**
  * Calls the ProjectSync AI backend and normalizes the result.
